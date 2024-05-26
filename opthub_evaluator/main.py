@@ -2,7 +2,7 @@
 
 import json
 
-from opthub_evaluator.lib.docker_executor import execute_in_docker
+from opthub_evaluator.docker_executor import execute_in_docker
 
 
 class Evaluator:

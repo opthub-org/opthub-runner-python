@@ -5,7 +5,7 @@ from typing import TypedDict, cast
 
 import docker
 
-from opthub_evaluator.utils.converter import float_to_json_float
+from opthub_evaluator.converter import float_to_json_float
 
 
 class DockerConfig(TypedDict):
