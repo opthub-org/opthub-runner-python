@@ -1,8 +1,18 @@
 """This module implements the evaluator."""
 
 import json
+from typing import TypedDict
 
-from opthub_evaluator.docker_executor import execute_in_docker
+from opthub_runner.docker_executor import execute_in_docker
+
+
+class EvaluationResult(TypedDict):
+    """A type for evaluation result."""
+
+    objective: object
+    feasible: bool | None
+    constraint: object | None
+    info: object
 
 
 class Evaluator:
@@ -30,16 +40,16 @@ class Evaluator:
         self.timeout = timeout
         self.rm = rm
 
-    def run(self, variable: object) -> dict[str, object]:
+    def run(self, variable: object) -> EvaluationResult:
         """Run the evaluator.
 
         Args:
-            variable (Any): The variable to evaluate.
+            variable (object): The variable to evaluate.
 
         Returns:
-            dict[str]: The result of the evaluation.
+            EvaluationResult: The evaluation result.
         """
-        evaluation_result = execute_in_docker(
+        docker_output = execute_in_docker(
             {
                 "image": self.docker_image,
                 "environments": self.environment,
@@ -49,14 +59,21 @@ class Evaluator:
             },
             [json.dumps(variable) + "\n"],
         )
-        if "error" in evaluation_result:
-            error = evaluation_result["error"]
+        if "error" in docker_output:
+            error = docker_output["error"]
             msg = f"Error occurred while evaluating solution:\n{error}"
             raise RuntimeError(msg)
-        if "feasible" not in evaluation_result:
-            evaluation_result["feasible"] = None
-        if "constraint" not in evaluation_result:
-            evaluation_result["constraint"] = None
-        if "info" not in evaluation_result:
-            evaluation_result["info"] = {}
+
+        feasible = docker_output.get("feasible", None)
+
+        if feasible is not None and not isinstance(feasible, bool):
+            msg = f"Feasible value is not boolean: {feasible}"
+            raise TypeError(msg)
+
+        evaluation_result: EvaluationResult = {
+            "objective": docker_output["objective"],
+            "feasible": feasible,
+            "constraint": docker_output.get("constraint", None),
+            "info": docker_output.get("info", None),
+        }
         return evaluation_result

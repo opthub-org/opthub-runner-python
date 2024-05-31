@@ -1,6 +1,6 @@
 """This module implements the tests for the evaluator."""
 
-from opthub_evaluator.main import Evaluator
+from opthub_runner.evaluator import Evaluator
 
 
 def test_evaluator() -> None:
