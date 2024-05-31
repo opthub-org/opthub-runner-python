@@ -31,9 +31,10 @@ class Evaluator:
         Args:
             docker_image (str): The docker image URL.
             environment (dict[str, str]): The environments.
-            rm (bool, optional): Remove the container after execution. Defaults to True.
-            timeout (float, optional): The timeout for the execution. Defaults to 43200 .
-
+            rm (bool, optional):
+                Remove the container after execution. Defaults to True.
+            timeout (float, optional):
+                The timeout for the execution. Defaults to 43200 .
         """
         self.docker_image = docker_image
         self.environment = environment

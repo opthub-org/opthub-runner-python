@@ -43,7 +43,9 @@ def execute_in_docker(
         detach=True,
     )
 
-    socket = container.attach_socket(params={"stdin": 1, "stream": 1, "stdout": 1, "stderr": 1})
+    socket = container.attach_socket(
+        params={"stdin": 1, "stream": 1, "stdout": 1, "stderr": 1},
+    )
 
     for line in std_in:
         socket._sock.sendall(line.encode("utf-8"))  # noqa: SLF001

@@ -16,7 +16,8 @@ def test_evaluator() -> None:
         msg = f"The objective value is not correct: result is {result['objective']}, expected list."
         raise TypeError(msg)
 
-    if abs(result["objective"][0] - 1) > eps or abs(result["objective"][1] - 1) > eps:
+    if (abs(result["objective"][0] - 1) > eps or
+            abs(result["objective"][1] - 1) > eps):
         msg = f"The objective value is not correct: result is {result['objective']}, expected [1, 1]."
         raise ValueError(msg)
 
