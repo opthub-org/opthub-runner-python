@@ -1,5 +1,5 @@
 [project]
-version = "0.0.0.post17"
+version = "0.0.0.post18"
 name = "opthub_runner"
 description = "Library for running OptHub problems locally."
 readme = "README.md"
@@ -21,10 +21,10 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-dependencies = [
-    "python >= 3.8",
-    "docker >= 7.1.0",
-]
+# dependencies = [
+#     "python >= 3.8",
+#     "docker >= 7.1.0",
+# ]
 
 [project.urls]
 Homepage = "https://github.com/opthub-org/opthub-runner-python"
