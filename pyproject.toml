@@ -1,5 +1,5 @@
 [project]
-version = "0.0.0.post14"
+version = "0.0.0.post16"
 name = "opthub_runner"
 description = "Library for running OptHub problems locally."
 readme = "README.md"
