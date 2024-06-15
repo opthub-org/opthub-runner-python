@@ -1,35 +1,35 @@
-[project]
-version = "0.0.0.post18"
-name = "opthub_runner"
-description = "Library for running OptHub problems locally."
-readme = "README.md"
-requires-python = ">=3.8"
-license = {text = "MIT"}
-keywords = ["opthub", "runner", "evaluator"]
-authors = [
-  {email = "dev@opthub.ai", name = "Opthub Inc."}
-]
-maintainers = [
-  {email = "dev@opthub.ai", name = "Opthub Inc."}
-]
-classifiers = [
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-]
+# [project]
+# version = "0.0.0.post18"
+# name = "opthub_runner"
+# description = "Library for running OptHub problems locally."
+# readme = "README.md"
+# requires-python = ">=3.8"
+# license = {text = "MIT"}
+# keywords = ["opthub", "runner", "evaluator"]
+# authors = [
+#   {email = "dev@opthub.ai", name = "Opthub Inc."}
+# ]
+# maintainers = [
+#   {email = "dev@opthub.ai", name = "Opthub Inc."}
+# ]
+# classifiers = [
+#     "License :: OSI Approved :: MIT License",
+#     "Programming Language :: Python :: 3",
+#     "Programming Language :: Python :: 3.8",
+#     "Programming Language :: Python :: 3.9",
+#     "Programming Language :: Python :: 3.10",
+#     "Programming Language :: Python :: 3.11",
+#     "Programming Language :: Python :: 3.12",
+# ]
 # dependencies = [
 #     "python >= 3.8",
 #     "docker >= 7.1.0",
 # ]
 
-[project.urls]
-Homepage = "https://github.com/opthub-org/opthub-runner-python"
-Documentation = "https://github.com/opthub-org/opthub-runner-python"
-Repository = "https://github.com/opthub-org/opthub-runner-python"
+# [project.urls]
+# Homepage = "https://github.com/opthub-org/opthub-runner-python"
+# Documentation = "https://github.com/opthub-org/opthub-runner-python"
+# Repository = "https://github.com/opthub-org/opthub-runner-python"
 
 
 [tool.poetry]
