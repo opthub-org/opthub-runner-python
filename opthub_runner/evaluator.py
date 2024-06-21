@@ -12,7 +12,7 @@ class EvaluationResult(TypedDict):
     objective: object
     feasible: bool | None
     constraint: object | None
-    info: object
+    info: object | None
 
 
 class Evaluator:
@@ -21,7 +21,7 @@ class Evaluator:
     def __init__(
         self,
         docker_image: str,
-        environment: dict[str, str],
+        environment: dict[str, object],
         *,
         rm: bool = True,
         timeout: float = 43200,
@@ -30,16 +30,18 @@ class Evaluator:
 
         Args:
             docker_image (str): The docker image URL.
-            environment (dict[str, str]): The environments.
+            environment (dict[str, object]): The environments.
             rm (bool, optional):
                 Remove the container after execution. Defaults to True.
             timeout (float, optional):
-                The timeout for the execution. Defaults to 43200 .
+                The timeout for the execution. Defaults to 43200.
         """
         self.docker_image = docker_image
-        self.environment = environment
         self.timeout = timeout
         self.rm = rm
+
+        # Convert all environment variables to string
+        self.environment: dict[str, str] = {var: str(environment[var]) for var in environment}
 
     def run(self, variable: object) -> EvaluationResult:
         """Run the evaluator.
