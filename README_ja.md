@@ -79,9 +79,10 @@ Evaluatorクラスのrunメソッドは、評価結果を返します。評価�
 objective, constraint, feasible, infoの詳細な説明は、[OptHub](https://opthub.ai)の各問題に記述されております。
 
 ## トラブルシューティング
-
-TODO
-Dockerを起動していない場合のエラーをここに書いて、対応方法としてDockerを起動しておくこと（Macの場合はDocker Desktopを起動しておくこと）を書く。
+Macで以下のエラーが出力された場合は、Docker Desktopを起動した上で再度実行してください。
+```shell
+docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))
+```
 
 ## 開発者の方へ
 
