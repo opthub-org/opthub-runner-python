@@ -15,7 +15,7 @@ opthub-runner-pythonは、ローカル実行用のEvaluatorを提供するPython
 
 1. Python 3.8以上をインストール
 2. pipを使えるように設定
-3. Dockerをインストール
+3. Docker\*をインストール
 
 \*Macの場合は、[Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)をインストールして起動できます。
 
