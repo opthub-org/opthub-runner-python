@@ -1,4 +1,5 @@
-[English Version](README.md) 👈
+[English Version](https://github.com/opthub-org/opthub-runner-python) 👈
+
 # opthub-runner-python
 
 ![Skills](https://skillicons.dev/icons?i=py,graphql,vscode,github)

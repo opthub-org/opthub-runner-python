@@ -1,4 +1,5 @@
-[日本語版](README_ja.md) 👈
+[日本語版](https://github.com/opthub-org/opthub-runner-python/blob/main/README_ja.md) 👈
+
 # opthub-runner-python
 
 ![Skills](https://skillicons.dev/icons?i=py,graphql,vscode,github)
