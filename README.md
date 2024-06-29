@@ -14,7 +14,7 @@ This repository describes how to install opthub-runner-python and use Evaluator.
 ## Getting Started
 First of all, you need to set up the following environment settings in advance.
 
-- Install Python 3.8 or newer.
+- Install Python 3.10 or newer.
 - Set up pip for package management.
 - Install and start Docker.*
 
