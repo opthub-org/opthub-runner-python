@@ -4,7 +4,7 @@ import json
 from typing import TypedDict, cast
 
 import docker
-from docker.errors import ImageNotFound
+from docker.errors import APIError
 
 from opthub_runner.converter import float_to_json_float
 
@@ -35,10 +35,10 @@ def execute_in_docker(
     client = docker.from_env()
 
     try:
-        client.images.get(config["image"])  # check if image exists
-    except ImageNotFound:
         client.images.pull(config["image"])  # pull image
-
+    except APIError:
+        client.images.get(config["image"])  # If image in local, get it
+        
     container = client.containers.run(
         image=config["image"],
         command=config["command"],
