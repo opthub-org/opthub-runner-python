@@ -38,7 +38,7 @@ def execute_in_docker(
         client.images.pull(config["image"])  # pull image
     except APIError:
         client.images.get(config["image"])  # If image in local, get it
-        
+
     container = client.containers.run(
         image=config["image"],
         command=config["command"],

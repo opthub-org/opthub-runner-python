@@ -5,7 +5,7 @@ from opthub_runner.evaluator import Evaluator
 
 def test_evaluator() -> None:
     """Test the evaluator."""
-    docker_image = "opthub/sphere:latest"
+    docker_image = "opthub/problem-sphere:latest"
     evaluator = Evaluator(docker_image, {"SPHERE_OPTIMA": "[[1, 0, 0], [0, 1, 0]]"})
 
     result = evaluator.run([0, 0, 0])
@@ -33,7 +33,7 @@ def test_evaluator() -> None:
 
 def test_evaluator_with_non_str_envvars() -> None:
     """Test the evaluator in case the environment type is not str."""
-    docker_image = "opthub/sphere:latest"
+    docker_image = "opthub/problem-sphere:latest"
     evaluator = Evaluator(docker_image, {"SPHERE_OPTIMA": [[1, 0, 0], [0, 1, 0]]})
 
     result = evaluator.run([0, 0, 0])
@@ -58,9 +58,10 @@ def test_evaluator_with_non_str_envvars() -> None:
         msg = f"The objective value is not correct: result is {result['objective']}, expected [0.5, 1.5]."
         raise ValueError(msg)
 
+
 def test_evaluator_with_local_images() -> None:
     """Test the evaluator in case the image is on the local machine."""
-    docker_image = "sphere:latest" # You need to have the image locally.
+    docker_image = "opthub/problem-sphere:latest"  # You need to have the image locally.
     evaluator = Evaluator(docker_image, {"SPHERE_OPTIMA": "[[1, 0]]"})
 
     result = evaluator.run([0, 0])
